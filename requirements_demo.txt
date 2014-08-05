@@ -1,6 +1,6 @@
 # Oscar extensions
 django-oscar-stores==0.5.1
-django-oscar-paypal==0.8
+django-oscar-paypal==https://github.com/aaugustin/django-oscar-paypal/archive/c7a5b64c282218ba1a6f6d89764b7944e493096a.zip
 django-oscar-datacash==0.8.2
 
 # We need PostGIS as the stores extension uses GeoDjango.
