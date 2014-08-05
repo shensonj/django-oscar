@@ -655,7 +655,7 @@ class ProductAttributesContainer(object):
 
     def __getattr__(self, name):
         if not name.startswith('_') and not self.initialised:
-            values = list(self.get_values().select_related('attribute'))
+            values = self.get_values().select_related('attribute')
             for v in values:
                 setattr(self, v.attribute.code, v.value)
             self.initialised = True
@@ -693,7 +693,7 @@ class ProductAttributesContainer(object):
         return self.get_all_attributes().get(code=code)
 
     def __iter__(self):
-        return iter(self.get_values())
+        return self.get_values()
 
     def save(self):
         for attribute in self.get_all_attributes():
